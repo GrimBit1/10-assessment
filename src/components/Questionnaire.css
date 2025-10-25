@@ -1,0 +1,263 @@
+.questionnaire-overlay {
+  /* position: fixed; */
+  background: rgba(0, 0, 0, 0.6);
+height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.questionnaire-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.progress-bar-container {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.logo-10 {
+  color: #1e3a8a;
+}
+
+.logo-x {
+  color: #ef4444;
+}
+
+.logo-coach {
+  color: #1e3a8a;
+  margin-left: 2px;
+}
+
+.questionnaire-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.question-text {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.rating-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.rating-button {
+  width: 80px;
+  height: 60px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rating-button:hover {
+  border-color: #1e3a8a;
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+.rating-button.selected {
+  border-color: #1e3a8a;
+  background: #1e3a8a;
+  color: white;
+  transform: scale(1.05);
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6b7280;
+  padding: 0 10px;
+}
+
+.navigation-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition: color 0.2s;
+}
+
+.back-button:hover {
+  color: #1e3a8a;
+}
+
+.next-button {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.next-button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.next-button:active {
+  transform: translateY(0);
+}
+
+.question-counter {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .questionnaire-modal {
+    padding: 32px 24px;
+  }
+
+  .questionnaire-title {
+    font-size: 26px;
+  }
+
+  .question-text {
+    font-size: 20px;
+  }
+
+  .rating-container {
+    gap: 8px;
+  }
+
+  .rating-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rating-container {
+    flex-wrap: wrap;
+    max-width: 280px;
+    margin: 0 auto 16px;
+  }
+
+  .rating-button {
+    width: 80px;
+  }
+}
